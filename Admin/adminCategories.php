@@ -62,10 +62,7 @@ if(!session_id()){
 
         font-size: 0.9rem;
         background-color: lightgray;
-        border-top-left-radius: 20px 20px;
-        border-bottom-right-radius: 20px 20px;
-        border-top-right-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-radius: 20px;
 
     }
 
@@ -84,10 +81,8 @@ if(!session_id()){
         color: black;
         transition: all 0.5s ease;
         background-color: lightgray;
-        border-top-left-radius: 20px 20px;
-        border-bottom-right-radius: 20px 20px;
-        border-top-right-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-radius: 20px;
+
 
     }
 

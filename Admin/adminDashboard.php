@@ -8,6 +8,9 @@ if(!session_id()){
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <style>
@@ -28,13 +31,16 @@ if(!session_id()){
     }
 
     .dashboard-box {
-        padding: 5px 0 0 15px;
-        height: 100px;
-        width: 200px;
-        border: 1px solid black;
+        padding: 15px 0 0 18px;
+        height: 120px;
+        width: 250px;
+        border-radius: 25px;
+        border-top: 1.5px solid beige;
+        border-bottom: 1.5px solid beige;
         margin: 30px;
         color: white;
-        box-shadow: 2px 2px 5px gray;
+        box-shadow: 2px 5px 5px gray;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .dashboard-box p {
@@ -72,7 +78,7 @@ if(!session_id()){
 
     <div class="body-main">
         <div class="dashboard-main">
-            <div class="dashboard-box red">
+            <div class="dashboard-box blue">
                 <?php
                 // $sql_items="SELECT COUNT(item_id) as total FROM items;";
                 $sql_items="SELECT * FROM items;";
@@ -80,10 +86,14 @@ if(!session_id()){
                 $item=mysqli_num_rows($result_items);
                 echo"$item";
                 ?>
-                <p>NO OF ITEMS</p>
+                <p>NO OF ITEMS
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                </p>
+
             </div>
 
-            <div class="dashboard-box blue">
+            <div class="dashboard-box red">
                 <?php
                 // $sql_items="SELECT COUNT(item_id) FROM items;";
                 $sql_items="SELECT * FROM categories;";
@@ -91,10 +101,12 @@ if(!session_id()){
                 $item=mysqli_num_rows($result_items);
                 echo"$item";
                 ?>
-                <p>NO OF CATEGORIES</p>
+                <p>NO OF CATEGORIES
+                    <i class="fa-solid fa-tag"></i>
+                </p>
             </div>
 
-            <div class="dashboard-box green">
+            <div class="dashboard-box purple">
                 <?php
                 // $sql_items="SELECT COUNT(item_id) FROM items;";
                 $sql_items="SELECT * FROM users;";
@@ -102,10 +114,12 @@ if(!session_id()){
                 $item=mysqli_num_rows($result_items);
                 echo"$item";
                 ?>
-                <p>NO OF USERS</p>
+                <p>NO OF USERS
+                    <i class="ri-user-2-fill"></i>
+                </p>
             </div>
 
-            <div class="dashboard-box cyan">
+            <div class="dashboard-box green">
                 <?php
                 // $sql_items="SELECT COUNT(item_id) FROM items;";
                 $sql_items="SELECT * FROM checkout_data where sold_status=1;";
@@ -113,10 +127,12 @@ if(!session_id()){
                 $item=mysqli_num_rows($result_items);
                 echo"$item";
                 ?>
-                <p>NO OF ORDERS</p>
+                <p>NO OF ORDERS
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </p>
             </div>
 
-            <div class="dashboard-box purple">
+            <div class="dashboard-box cyan">
                 <?php
                 // $sql_items="SELECT COUNT(item_id) FROM items;";
                 $sql_items="SELECT * FROM totalsales;";
@@ -124,7 +140,9 @@ if(!session_id()){
                 $item=mysqli_fetch_array($result_items);
                 echo"Rs "."$item[0]";
                 ?>
-                <p>TOTAL SALES</p>
+                <p>TOTAL SALES
+                    <i class="ri-money-rupee-circle-line" style="font-size: 1.5rem;"></i>
+                </p>
             </div>
         </div>
     </div>
